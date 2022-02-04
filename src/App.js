@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import TodoList from "./components/TodoList";
+import AuthContextProvider from "./components/AuthContext";
 
 // yang dipanggil selain di component adalah provider dari context
 import ThemeContextProvider from "./context/ThemeContext";
@@ -11,10 +12,13 @@ function App() {
       <div className="ui raised very padded text container segment">
 
         {/* menampung component dalam provider */}
-        <ThemeContextProvider>
+        {/* bisa lebih dari satu context */}
+        <AuthContextProvider>
+          <ThemeContextProvider>
           <Navbar/>
           <TodoList/>
-        </ThemeContextProvider>
+          </ThemeContextProvider>          
+        </AuthContextProvider>
       </div>
     </div>
   );
