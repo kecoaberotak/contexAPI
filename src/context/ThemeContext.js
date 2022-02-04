@@ -23,6 +23,7 @@ class ThemeContextProvider extends React.Component {
     render () {
         return (
             // memakai spread operation agar componen lain bisa memakai nilai dari context
+            // perhatikan syntax nya
             <ThemeContext.Provider value={{...this.state}}>
                 {this.props.children}
             </ThemeContext.Provider>
