@@ -7,20 +7,24 @@ class Navbar extends React.Component {
     // mengaktifkan context di componen
     static contextType = ThemeContext;
     render() {
-        // mengambil nilai context
-        const {isDarkTheme, darkTheme, lightTheme} = this.context;
-        const theme = isDarkTheme ? darkTheme : lightTheme;
+        // mengambil nilai context        
         return (
-            <nav style={{background: theme.background, color: theme.text, height: '120px'}}>
-                <h2 style={{textAlign: 'center'}} >
-                    Yo Academy
-                </h2>
-                <div className="ui three buttons">
-                    <button className="ui button">Overview</button>
-                    <button className="ui button">Contact</button>
-                    <button className="ui button">Support</button>
-                </div>
-            </nav>
+            <ThemeContext.Consumer>{(context) => {
+                const {isDarkTheme, darkTheme, lightTheme} = context;
+                const theme = isDarkTheme ? darkTheme : lightTheme;
+                return (
+                    <nav style={{background: theme.background, color: theme.text, height: '120px'}}>
+                        <h2 style={{textAlign: 'center'}} >
+                            Yo Academy
+                        </h2>
+                        <div className="ui three buttons">
+                            <button className="ui button">Overview</button>
+                            <button className="ui button">Contact</button>
+                            <button className="ui button">Support</button>
+                        </div>
+                    </nav>                    
+                )
+            }}</ThemeContext.Consumer>
         )
     }
 }
