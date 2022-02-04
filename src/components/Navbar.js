@@ -1,9 +1,13 @@
 import React from "react";
+
+// didalam component yang dipanggil adalah contextType
 import { ThemeContext } from "../context/ThemeContext";
 
 class Navbar extends React.Component {
+    // mengaktifkan context di componen
     static contextType = ThemeContext;
     render() {
+        // mengambil nilai context
         const {isDarkTheme, darkTheme, lightTheme} = this.context;
         const theme = isDarkTheme ? darkTheme : lightTheme;
         return (
