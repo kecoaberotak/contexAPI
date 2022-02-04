@@ -1,6 +1,6 @@
 import React, {createContext} from "react";
 
-// context adalah componen yang bersifat "global"
+// context membuat proses oper data menjadi lebih mudah, karena tidak harus mengoper data melalui props d tiap tingkatan karena data dalam context bersifat "global"
 
 // untuk di panggil di App.js
 export const ThemeContext = createContext();
