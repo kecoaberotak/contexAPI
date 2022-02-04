@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import TodoList from "./components/TodoList";
-import AuthContextProvider from "./components/AuthContext";
+import AuthContextProvider from "./context/AuthContext";
 
 // yang dipanggil selain di component adalah provider dari context
 import ThemeContextProvider from "./context/ThemeContext";

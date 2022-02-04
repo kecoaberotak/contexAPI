@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 // didalam component yang dipanggil adalah contextType
 import { ThemeContext } from "../context/ThemeContext";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "../context//AuthContext";
 
 
 
