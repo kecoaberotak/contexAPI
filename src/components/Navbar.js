@@ -9,6 +9,8 @@ class Navbar extends React.Component {
     render() {
         // mengambil nilai context        
         return (
+            // menggunakan context consumer, memberikan hasil yang sama
+            // context consumer bisa digunakan untuk funsional component
             <ThemeContext.Consumer>{(context) => {
                 const {isDarkTheme, darkTheme, lightTheme} = context;
                 const theme = isDarkTheme ? darkTheme : lightTheme;
