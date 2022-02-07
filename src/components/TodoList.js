@@ -2,12 +2,14 @@ import React, {useContext} from "react";
 
 // didalam component yang dipanggil adalah contextType
 import { ThemeContext } from "../context/ThemeContext";
+import { TodoListContext } from "../context/TodoListContext";
 
 
 // MENGGUNAKAN FUNCTIONAL COMPONENT
 
 const TodoList = () => {
     // memanggil context yg mau dipakai
+    const {todos} = useContext(TodoListContext);
     const {isDarkTheme, lightTheme, darkTheme, changeTheme} = useContext(ThemeContext);
     const theme = isDarkTheme ? darkTheme : lightTheme;
 

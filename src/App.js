@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import TodoList from "./components/TodoList";
 import AuthContextProvider from "./context/AuthContext";
+import TodoListContextProvider from "./context/TodoListContext";
 
 // yang dipanggil selain di component adalah provider dari context
 import ThemeContextProvider from "./context/ThemeContext";
@@ -14,10 +15,12 @@ function App() {
         {/* menampung component dalam provider */}
         {/* bisa lebih dari satu context */}
         <AuthContextProvider>
-          <ThemeContextProvider>
-          <Navbar/>
-          <TodoList/>
-          </ThemeContextProvider>          
+          <TodoListContextProvider>
+            <ThemeContextProvider>
+              <Navbar/>
+              <TodoList/>
+            </ThemeContextProvider>  
+          </TodoListContextProvider>        
         </AuthContextProvider>
       </div>
     </div>
