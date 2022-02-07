@@ -9,6 +9,7 @@ const TodoListContextProvider = ({children}) => {
         {text: 'Go for a walk', id: 3}
     ]);
 
+    // tambah data
     const addTodo = (todo) => {
         setTodos([
             ...todos,
@@ -16,8 +17,15 @@ const TodoListContextProvider = ({children}) => {
         ]);
     };
 
+    // hapus data
+    const removeTodo = (id) => {
+        setTodos(todos.filter((todo) => {
+            return todo.id !== Number(id);
+        }));
+    };
+
     return(
-        <TodoListContext.Provider value={{todos, addTodo}}>
+        <TodoListContext.Provider value={{todos, addTodo, removeTodo}}>
             {children}
         </TodoListContext.Provider>
     )
