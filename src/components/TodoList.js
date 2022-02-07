@@ -10,7 +10,7 @@ import { TodoListContext } from "../context/TodoListContext";
 const TodoList = () => {
     const [todo, setTodo] = useState('');
     // memanggil context yg mau dipakai
-    const {todos, addTodo, removeTodo} = useContext(TodoListContext);
+    const {todos, dispatch} = useContext(TodoListContext);
     const {isDarkTheme, lightTheme, darkTheme, changeTheme} = useContext(ThemeContext);
     const theme = isDarkTheme ? darkTheme : lightTheme;
 
@@ -23,13 +23,23 @@ const TodoList = () => {
     // menambahkan data ke state utama (todos)
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        addTodo(todo);
+
+        // ini state
+        // addTodo(todo);
+
+        // ini reducer
+        dispatch({type: 'ADD_TODO', text: todo})
     }
 
     // pengecekan untuk menghapus data
     const handleRemoveTodo = (e) => {
         const id = e.target.id;
-        removeTodo(id);
+
+        // ini state
+        // removeTodo(id);
+
+        // ini reducer
+        dispatch({type: 'REMOVE_TODO', id: id})
     };
 
     return (
